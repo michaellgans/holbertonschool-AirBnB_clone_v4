@@ -81,11 +81,17 @@ button:hover {
 .locations .popover {
     margin-top: 0%;
 }
+
+/* Checkboxes for list */
 .popover ul {
+    display: felx;
+    align-items: center;
     list-style-type: none;
     padding-bottom: 10px;
     padding-left: 10px;
+    text-indent: 10px;
 }
+
 .popover ul li{
     padding: 4px;
     padding-left: 10px;
