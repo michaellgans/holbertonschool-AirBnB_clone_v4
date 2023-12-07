@@ -53,7 +53,6 @@ button:hover {
 
 .popover {
     visibility: hidden;
-    width: 100%;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
     background: #FAFAFA;
@@ -68,14 +67,18 @@ button:hover {
     width: 0px;
 }
 
+.locations .popover {
+    width: 100%;
+}
 .amenities .popover {
+    width: 120%;
     padding: 10px 0;
     margin-left: -5px;
     margin-top: 0%;
 }
 
 .amenities .popover ul{
-    margin: 0px;
+    margin: 12px;
 }
 
 .locations .popover {
@@ -84,17 +87,18 @@ button:hover {
 
 /* Checkboxes for list */
 .popover ul {
-    display: felx;
-    align-items: center;
+    margin-left: 50px;
     list-style-type: none;
     padding-bottom: 10px;
     padding-left: 10px;
-    text-indent: 10px;
 }
 
-.popover ul li{
-    padding: 4px;
-    padding-left: 10px;
+.popover ul li {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    text-indent: 10px;
+    padding-left: 1rem;
 }
 
 .popover ul h2{
