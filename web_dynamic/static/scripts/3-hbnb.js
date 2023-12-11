@@ -30,5 +30,42 @@ $(document).ready(function () {
       console.log('Could not fetch API status');
     }
   });
-})
+
+  $.ajax({
+      type: 'POST',
+      url: `http://${window.location.hostname}:5001/api/v1/places_search/`,
+      contentType: `application/json`,
+      data: '{}', 
+      success: function (data) {
+        console.log(data)
+        for (const places of data) {
+          $(".places").append(
+            `<article>
+              <h2>${places.name}</h2>
+              <div class="price_by_night">
+                  <p>$${places.price_by_night}</p>
+              </div>
+              <div class="information">
+                  <div class="max_guest">
+                      <div class="guest_image"></div>
+                      <p>${places.max_guest}</p>
+                  </div>
+                  <div class="number_rooms">
+                      <div class="bed_image"></div>
+                      <p>${places.number_rooms}</p>
+                  </div>
+                  <div class="number_bathrooms">
+                      <div class="bath_image"></div>
+                      <p>${places.number_bathrooms}</p>
+                  </div>
+              </div>
+              <div class="description">
+                  <p>${places.description}</p>
+              </div>
+            </article>`
+          )
+        }
+      }
+    })
+});
 
