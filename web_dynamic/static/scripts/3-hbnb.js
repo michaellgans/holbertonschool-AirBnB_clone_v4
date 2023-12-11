@@ -41,22 +41,21 @@ $(document).ready(function () {
         for (const places of data) {
           $(".places").append(
             `<article>
+            <div class="title_box">
               <h2>${places.name}</h2>
               <div class="price_by_night">
                   <p>$${places.price_by_night}</p>
               </div>
+            </div>
               <div class="information">
                   <div class="max_guest">
-                      <div class="guest_image"></div>
-                      <p>${places.max_guest}</p>
+                    ${places.max_guest} Guest(s)
                   </div>
                   <div class="number_rooms">
-                      <div class="bed_image"></div>
-                      <p>${places.number_rooms}</p>
+                    ${places.number_rooms} Room(s)
                   </div>
                   <div class="number_bathrooms">
-                      <div class="bath_image"></div>
-                      <p>${places.number_bathrooms}</p>
+                    ${places.number_bathrooms} Bathroom(s)
                   </div>
               </div>
               <div class="description">
