@@ -1,23 +1,23 @@
 #!/usr/bin/node
 
 $(document).ready(function () {
-  let amenity_list = [];
+  let amenityList = [];
 
   $('input:checkbox').on('change', function () {
-    const amenity_object = { id: $(this).data('id'), name: $(this).data('name') };
+    const amenityObject = { id: $(this).data('id'), name: $(this).data('name') };
 
     if (this.checked) {
-      amenity_list.push(amenity_object);
+      amenityList.push(amenityObject);
     } else {
-      amenity_list = amenity_list.filter(item => item.id !== amenity_object.id);
+      amenityList = amenityList.filter(item => item.id !== amenityObject.id);
     }
 
-    updateAmenityList(amenity_list);
-    console.log(amenity_list);
+    updateAmenityList(amenityList);
+    console.log(amenityList);
   });
 
-  function updateAmenityList(amenity_list) {
-    checkedAmenities = amenity_list.map(item => item.name).join(", ");
+  function updateAmenityList (amenityList) {
+    const checkedAmenities = amenityList.map(item => item.name).join(', ');
     $('.amenities h4').text(checkedAmenities);
   }
 
@@ -26,7 +26,7 @@ $(document).ready(function () {
       $('#api_status').addClass('available');
       console.log('Successfully fetched API status');
     } else {
-      $("#api_status").removeClass('available');
+      $('#api_status').removeClass('available');
       console.log('Could not fetch API status');
     }
   });
@@ -34,12 +34,12 @@ $(document).ready(function () {
   $.ajax({
     type: 'POST',
     url: `http://${window.location.hostname}:5001/api/v1/places_search/`,
-    contentType: `application/json`,
+    contentType: 'application/json',
     data: '{}',
     success: function (data) {
       console.log(data);
       for (const places of data) {
-        $(".places").append(
+        $('.places').append(
           `<article>
             <div class="title_box">
               <h2>${places.name}</h2>
@@ -68,7 +68,7 @@ $(document).ready(function () {
   });
 
   $('button').click(function () {
-    const amenityIds = amenity_list.map(item => item.id);
+    const amenityIds = amenityList.map(item => item.id);
     console.log('This is what is being POSTd: ', amenityIds);
     $.ajax({
       type: 'POST',
@@ -78,7 +78,7 @@ $(document).ready(function () {
       success: function (data) {
         console.log(data);
         for (const places of data) {
-          $(".places").append(
+          $('.places').append(
             `<article>
               <div class="title_box">
                 <h2>${places.name}</h2>

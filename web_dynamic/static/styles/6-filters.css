@@ -83,20 +83,16 @@ button:active {
 
 .amenities .popover ul{
     margin: 12px;
+    list-style-type: none;
+    padding-bottom: 10px;
+    padding-left: 10px;
 }
 
 .locations .popover {
     margin-top: 0%;
 }
 
-/* Checkboxes for list */
-.popover ul {
-    list-style-type: none;
-    padding-bottom: 10px;
-    padding-left: 10px;
-}
-
-.popover ul li {
+.amenities .popover ul li {
     display: flex;
     align-items: center;
     list-style-type: none;
