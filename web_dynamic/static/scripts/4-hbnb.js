@@ -77,6 +77,7 @@ $(document).ready(function () {
       data: JSON.stringify({ amenities: amenityIds }),
       success: function (data) {
         console.log(data);
+        $('section.places').empty();
         for (const places of data) {
           $('.places').append(
             `<article>
