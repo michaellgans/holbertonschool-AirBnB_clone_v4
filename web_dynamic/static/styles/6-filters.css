@@ -21,6 +21,10 @@ button {
 button:hover {
     opacity: 0.9;
 }
+button:active {
+    opacity: 1;
+    color: black;
+}
 .filters div {
     display: inline-grid;
 }
